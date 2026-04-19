@@ -81,7 +81,7 @@ sales-forecasting/
 ├── .gitignore
 ├── data/                    (gitignored)
 │   └── train.csv
-├── src/
+├── fills/
 │   ├── train.py             data loading, features, baselines, NN training
 │   └── evaluate.py          plots + final results
 └── results/
