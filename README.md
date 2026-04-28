@@ -87,6 +87,8 @@ After the feedforward model, I added the features it was missing and upgraded to
 | Feedforward NN | 78,350 | 127,129 | −41% |
 | **LSTM (final)** | **59,859** | **94,944** | **−55% MAE** |
 
+> **Note on baseline numbers:** Part 1 and Part 2 baselines differ slightly because the LSTM uses 7-day input sequences, meaning the first 7 test days are excluded from evaluation. All models in Part 2 are evaluated on the same trimmed window so the comparison is fair. Part 1 used the full test period including the volatile New Year's week, which inflates baseline error.
+
 ---
 
 ## Part 3 — Forecast Dashboard
@@ -139,7 +141,7 @@ python train.py
 python evaluate.py
 
 # 5. Train the LSTM
-python LTSM.py
+python LSTM.py
 
 # 6. Run the dashboard
 streamlit run app.py
@@ -153,16 +155,15 @@ streamlit run app.py
 sales-forecasting/
 ├── README.md
 ├── requirements.txt
-├── LTSM.py                      LSTM training pipeline
-├── app.py                       Streamlit forecast dashboard
-├── predict.py                   Single-day prediction script
 ├── feedforward/
-│   ├── train.py                 Feedforward model training
-│   └── evaluate.py              Plots and metrics
-├── save_model/
-│   ├── model.pt                 Trained LSTM weights
-│   ├── x_scaler.pkl             Feature scaler
-│   └── y_scaler.pkl             Target scaler
+│   ├── train.py
+│   └── evaluate.py
+├── LSTM_forecast/
+│   ├── LSTM.py
+│   ├── app.py
+│   └── save_model/
+│       ├── x_scaler.pkl
+│       └── y_scaler.pkl
 └── results/
     ├── predictions_vs_actual.png
     └── march_2017_zoom.png
