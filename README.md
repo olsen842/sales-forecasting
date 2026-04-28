@@ -158,7 +158,7 @@ sales-forecasting/
 ├── feedforward/
 │   ├── train.py
 │   └── evaluate.py
-├── LSTM_forecast/
+├── LSTM sales forecast/
 │   ├── LSTM.py
 │   ├── app.py
 │   └── save_model/
