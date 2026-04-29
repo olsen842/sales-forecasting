@@ -8,9 +8,9 @@ from sklearn.metrics import mean_absolute_error, mean_squared_error
 
 # ---- load and prep data ----
 
-df = pd.read_csv("/Users/eliasolsen/Documents/programering/mappe uden navn/store-sales-time-series-forecasting/train.csv")
-holidays = pd.read_csv("/Users/eliasolsen/Documents/programering/mappe uden navn/store-sales-time-series-forecasting/holidays_events.csv")
-oil_df = pd.read_csv("/Users/eliasolsen/Documents/programering/mappe uden navn/store-sales-time-series-forecasting/oil.csv")
+df = pd.read_csv("store-sales-time-series-forecasting/train.csv")
+holidays = pd.read_csv("store-sales-time-series-forecasting/holidays_events.csv")
+oil_df = pd.read_csv("store-sales-time-series-forecasting/oil.csv")
 df["date"] = pd.to_datetime(df["date"])
 holidays["date"] = pd.to_datetime(holidays["date"])
 oil_df["date"] = pd.to_datetime(oil_df["date"])
